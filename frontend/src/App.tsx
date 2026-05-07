@@ -66,8 +66,8 @@ function VLine() {
   return <div style={{ width: 1, flexShrink: 0, background: "var(--border)" }} />;
 }
 
-function Titlebar({ status, loading, signalCount, band }: {
-  status: string; loading: boolean; signalCount: number | null; band: RiskBand | null;
+function Titlebar({ status, loading, band }: {
+  status: string; loading: boolean; band: RiskBand | null;
 }) {
   const dotColor = loading
     ? "var(--band-moderate)"
@@ -524,7 +524,7 @@ export default function App() {
   if (rewriteAllRunning) return;
   setRewriteAllRunning(true);
   const idxs = findings
-    .map((f, i) => (rwState[i] !== "accepted" ? i : null))
+    .map((_f, i) => (rwState[i] !== "accepted" ? i : null))
     .filter((i): i is number => i !== null);
   for (const idx of idxs) {
     const finding = findings[idx];
@@ -595,7 +595,6 @@ export default function App() {
       <Titlebar
         status={status}
         loading={phase === "loading"}
-        signalCount={phase === "results" ? findings.length : null}
         band={phase === "results" && report ? report.risk.band : null}
       />
 

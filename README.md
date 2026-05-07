@@ -14,7 +14,7 @@ A privacy audit tool. Paste a draft post you're about to publish under a pseudon
 - **Suggests** minimum-edit rewrites that preserve meaning but remove the identifying signal
 - **Copies** the rewritten text to clipboard so you can re-analyze or post directly
 
-Inspired by ["Large-scale online deanonymization with LLMs"](https://arxiv.org/abs/2502.01515) (Lermen et al., 2025).
+Inspired by ["Large-scale online deanonymization with LLMs"](https://arxiv.org/abs/2602.16800v1) (Lermen et al., 2026).
 
 ---
 
